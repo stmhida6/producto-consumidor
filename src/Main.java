@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Cola cola = new Cola(10); // tamaño de la cola
+        Cola cola = new Cola(100); // tamaño de la cola
 
        /* cola.meter(1);
         cola.meter(2);
@@ -17,7 +17,7 @@ public class Main {
             System.out.println(cola.sacar());
         }*/
 
-        Productor productor = new Productor(cola, 10);
+        Productor productor = new Productor(cola, 1000);
         try {
             Thread hiloProductor = new Thread(productor);
             hiloProductor.start();

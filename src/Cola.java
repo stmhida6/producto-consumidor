@@ -9,9 +9,11 @@ public class Cola {
         this.capacidad = capacidad;
     }
 
-    public  void meter(int valor)   {
+    public   synchronized void meter(int valor)    throws InterruptedException {
         while (cola.size() == capacidad) {
             System.out.println("Cola llena, ");
+            //esperar a que se saque un elemento
+            wait();
 
 
         }

@@ -12,13 +12,19 @@ public class Productor  implements Runnable {
     @Override
     public void run() {
         Random random = new Random();
-        //generar valores aleatorios
         System.out.println("Productor iniciado");
-        for (int i = 0; i < cantidad; i++) {
-            int numero = random.nextInt(100);
-            cola.meter(numero);
-            System.out.println("metio: " + numero);
+        try {
+
+            for (int i = 0; i < cantidad; i++) {
+                int numero = random.nextInt(100);
+                cola.meter(numero);
+                System.out.println("metio: " + numero);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
+        //generar valores aleatorios
+
     }
 
 }
