@@ -17,11 +17,13 @@ public class Main {
             System.out.println(cola.sacar());
         }*/
 
-        Productor productor = new Productor(cola, 1000);
+        Productor productor = new Productor(cola, 100);
+        Consumidor consumidor = new Consumidor(cola);
         try {
             Thread hiloProductor = new Thread(productor);
             hiloProductor.start();
             hiloProductor.join();
+            consumidor.consumir();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
