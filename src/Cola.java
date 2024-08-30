@@ -18,13 +18,22 @@ public class Cola {
 
         }
         cola.add(valor);
+        //avisaa que puede sacfar un elemento
+        notifyAll();
+
 
     }
 
-    public  int sacar()   {
+    public  synchronized  int sacar()   throws InterruptedException {
+while (cola.isEmpty()) {
+    //sila cola esta vacia esperar a que se meta un elemento
+    // o no hay nada que sacar
 
+    wait();
+}
         int valor = cola.poll();
-
+        //avisar que se puede meter un elemento
+    notifyAll();
         return valor;
     }
 
