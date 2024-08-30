@@ -20,6 +20,9 @@ public class Productor  implements Runnable {
                 cola.meter(numero);
                 System.out.println("metio: " + numero);
             }
+            //al terminar agregar un -1 para indicar que termino
+            cola.meter(-1);
+
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
