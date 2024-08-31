@@ -19,7 +19,7 @@ public class Main {
             System.out.println(cola.sacar());
         }*/
 
-        Productor productor = new Productor(cola, 100);
+        Productor productor = new Productor(cola, 1000);
         Consumidor consumidor = new Consumidor(cola);
 
 
