@@ -16,7 +16,9 @@ public class Productor  implements Runnable {
         try {
 
             for (int i = 0; i < cantidad; i++) {
-                int numero = random.nextInt(100);
+                //se suma uno para que el numero sea de 1 a 100
+                int numero = random.nextInt(100)+1;
+
                 cola.meter(numero);
                 System.out.println("metio: " + numero);
             }

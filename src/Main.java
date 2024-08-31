@@ -22,7 +22,6 @@ public class Main {
         Productor productor = new Productor(cola, 1000);
         Consumidor consumidor = new Consumidor(cola);
 
-
         try {
             //
             Thread hiloProductor = new Thread(productor);
@@ -35,12 +34,6 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
 
 
     }

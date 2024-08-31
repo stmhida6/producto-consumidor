@@ -21,13 +21,13 @@ public class Cola {
         //avisaa que puede sacfar un elemento
         notifyAll();
 
-
     }
 
     public  synchronized  int sacar()   throws InterruptedException {
 while (cola.isEmpty()) {
     //sila cola esta vacia esperar a que se meta un elemento
     // o no hay nada que sacar
+
 
     wait();
 }

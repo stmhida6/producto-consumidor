@@ -18,9 +18,9 @@ public class Consumidor implements Runnable {
                 if (valor == -1) {
                     break;  //sale del ciclo cuando la cola esta llena
                 }
-                int indice = (valor )/10;
+                int indice = (valor -1)/10;
                 cuentaDecenas[indice]++;
-                System.out.println("Consumidor procesó: " + valor);
+                System.out.println("consumidor procesó: " + valor);
 
                 //System.out.println("Consumio: " + valor);
                // Thread.sleep(1000);
@@ -33,15 +33,15 @@ public class Consumidor implements Runnable {
         int total = 0;
         // Imprime los resultados
         for (int i = 0; i < cuentaDecenas.length; i++) {
-            System.out.println("Números entre " + (i * 10  + " y " + (i ) * 10) + ": " + cuentaDecenas[i]);
+            System.out.println("valores entre " + (i * 10 + 1) + " y " + ((i + 1) * 10) + ": " + cuentaDecenas[i]);
             total += cuentaDecenas[i];
         }
-        System.out.println("Total de números procesados: " + total);
+        System.out.println("total de numeros procesados: " + total);
 // Verifica si se generaron y procesaron exactamente 1000 números
         if (total == 1000) {
-            System.out.println("¡Correcto! Se generaron y procesaron 1000 números.");
+            System.out.println("se generaron  1000 números.");
         } else {
-            System.out.println("¡Error! La cantidad de números procesados es incorrecta.");
+            System.out.println("¡Error!");
         }
     }
 }
